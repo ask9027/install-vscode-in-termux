@@ -6,8 +6,11 @@
 
 
 ```
+sudo apt install gnupg
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EB3E94ADBE1229CF
+
 #Add vscode repo
-echo "deb [arch=arm64,amd64,armhf] http://packages.microsoft.com/repos/code stable main" >> /etc/apt/sources.list.d/vscode.list
+echo "deb [arch=arm64,amd64,armhf signed-by=/etc/apt/trusted.gpg] http://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list
 
 sudo apt update
 sudo apt install code -y
